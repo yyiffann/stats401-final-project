@@ -2,7 +2,7 @@
 
 STATS 401 final project, Luyu Su and Yifan Zuo.
 
-- Interim Check-in: index.html 
+- Interim Check-in: [`interim.html`](interim.html)
 - Proposal: [`proposal.md`](proposal.md)
 
 ## Repository layout
