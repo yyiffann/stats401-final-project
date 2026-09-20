@@ -2,7 +2,7 @@
 
 STATS 401 final project, Luyu Su and Yifan Zuo.
 
-- Project page (GitHub Pages): `index.html`(index.html)
+- Project page (GitHub Pages): [`index.html`](index.html)
 - Proposal: [`proposal.md`](proposal.md)
 
 ## Repository layout
