@@ -1,0 +1,44 @@
+{
+  "years": [
+    2000,
+    2022
+  ],
+  "countries": 148,
+  "rows": 3404,
+  "raw_country_year_rows": 5681,
+  "imputed_cells": 734,
+  "dropped_for_missing": [
+    "cub",
+    "dji",
+    "eri",
+    "hkg",
+    "nic",
+    "prk",
+    "som",
+    "ssd",
+    "ven",
+    "yem"
+  ],
+  "missing_share_raw": {
+    "life_exp": 0.0,
+    "u5_mort": 0.0,
+    "school_mean": 0.005,
+    "school_exp": 0.001,
+    "water": 0.011,
+    "sanitation": 0.012,
+    "electricity": 0.003,
+    "unemp": 0.0,
+    "vuln_emp": 0.0,
+    "pm25": 0.087,
+    "gdp_pc": 0.0
+  },
+  "lowess_frac": 0.6,
+  "weight_draws": 2000,
+  "k_profiles": 5,
+  "validation": {
+    "n_country_years": 2053,
+    "r_wellbeing_lifesat": 0.783,
+    "r_loggdp_lifesat": 0.789,
+    "r_gap_lifesat_resid": 0.282
+  }
+}

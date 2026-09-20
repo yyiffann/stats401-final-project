@@ -1,0 +1,149 @@
+gap_equal,gap_p05,gap_p95,rank_equal,rank_p05,rank_p50,rank_p95,share_positive,iso3,name,region
+15.99,12.55,19.06,1,1,1,4,1.0,KGZ,Kyrgyz Republic,Europe & Central Asia
+14.43,8.33,19.82,2,1,2,17,1.0,TJK,Tajikistan,Europe & Central Asia
+10.46,9.03,11.73,3,3,5,10,1.0,MWI,Malawi,Sub-Saharan Africa
+10.2,2.34,16.78,4,2,6,54,0.978,PSE,Palestine,Middle East & N. Africa
+9.99,7.86,11.78,5,3,6,16,1.0,BDI,Burundi,Sub-Saharan Africa
+9.28,4.9,13.19,6,3,8,24,1.0,TLS,Timor-Leste,East Asia & Pacific
+9.14,5.41,13.74,7,2,8,20,1.0,EST,Estonia,Europe & Central Asia
+9.07,5.51,12.08,8,5,9,23,1.0,HND,Honduras,Americas
+8.41,2.91,16.23,9,1,13,40,1.0,MDG,Madagascar,Sub-Saharan Africa
+8.21,6.07,10.23,10,9,12,17,1.0,UKR,Ukraine,Europe & Central Asia
+8.01,6.11,9.79,11,5,13,27,1.0,LKA,Sri Lanka,South Asia
+7.95,5.38,10.73,12,4,13,28,1.0,BLR,Belarus,Europe & Central Asia
+7.71,1.36,14.0,13,3,15,63,0.981,SYR,Syria,Middle East & N. Africa
+7.53,2.96,13.01,14,4,15,40,0.998,FIN,Finland,Europe & Central Asia
+7.39,3.09,10.12,15,4,13,52,0.996,UZB,Uzbekistan,Europe & Central Asia
+7.15,3.44,11.37,16,8,16,39,0.996,MOZ,Mozambique,Sub-Saharan Africa
+6.91,3.54,10.86,17,8,17,32,1.0,NZL,New Zealand,East Asia & Pacific
+6.72,3.36,9.73,18,6,19,39,1.0,PHL,Philippines,East Asia & Pacific
+6.55,3.89,9.23,19,11,20,31,1.0,JAM,Jamaica,Americas
+6.17,2.51,9.43,20,7,21,56,0.999,JOR,Jordan,Middle East & N. Africa
+6.14,2.66,8.95,21,9,21,49,0.999,KHM,Cambodia,East Asia & Pacific
+6.11,1.23,12.3,22,5,23,60,0.994,PRY,Paraguay,Americas
+5.82,3.97,7.32,23,15,23,38,1.0,MAR,Morocco,Middle East & N. Africa
+5.67,1.9,8.87,24,10,25,58,0.994,SLV,El Salvador,Americas
+5.66,1.78,10.07,25,11,25,53,0.992,SWE,Sweden,Europe & Central Asia
+5.52,3.31,7.13,26,19,25,42,1.0,LBN,Lebanon,Middle East & N. Africa
+5.4,1.44,8.68,27,12,26,57,0.988,LSO,Lesotho,Sub-Saharan Africa
+5.12,1.33,8.54,28,12,29,60,0.99,MDA,Moldova,Europe & Central Asia
+4.68,2.11,7.2,29,13,30,59,1.0,JPN,Japan,East Asia & Pacific
+4.59,2.45,6.47,30,25,31,46,1.0,ECU,Ecuador,Americas
+4.56,1.2,7.95,31,18,31,65,0.986,PRT,Portugal,Europe & Central Asia
+4.47,-0.59,10.12,32,10,32,91,0.918,MUS,Mauritius,Sub-Saharan Africa
+4.46,2.65,5.87,33,20,32,48,1.0,LVA,Latvia,Europe & Central Asia
+4.31,2.35,6.12,34,19,34,56,0.998,RWA,Rwanda,Sub-Saharan Africa
+4.19,2.83,5.56,35,31,34,41,1.0,AUS,Australia,East Asia & Pacific
+3.69,0.47,7.53,36,21,41,73,0.979,CAN,Canada,Americas
+3.56,0.99,5.77,37,17,40,69,0.988,LBR,Liberia,Sub-Saharan Africa
+3.53,1.53,5.47,38,31,41,56,1.0,LTU,Lithuania,Europe & Central Asia
+3.49,1.51,5.8,39,32,41,59,1.0,NOR,Norway,Europe & Central Asia
+3.48,2.21,4.6,40,30,42,51,1.0,GBR,UK,Europe & Central Asia
+3.4,0.08,7.63,41,21,46,79,0.957,BRA,Brazil,Americas
+3.33,0.62,5.55,42,18,42,71,0.972,SVN,Slovenia,Europe & Central Asia
+3.14,1.52,4.54,43,34,45,62,1.0,VNM,Vietnam,East Asia & Pacific
+3.1,0.08,5.97,44,22,45,81,0.96,RUS,Russia,Europe & Central Asia
+3.02,1.56,4.42,45,28,45,63,1.0,DEU,Germany,Europe & Central Asia
+2.84,-1.63,6.86,46,18,48,98,0.857,COD,"Congo, Dem. Rep.",Sub-Saharan Africa
+2.8,-0.12,5.85,47,25,49,85,0.936,MEX,Mexico,Americas
+2.79,0.85,4.42,48,28,48,69,0.996,MMR,Myanmar,East Asia & Pacific
+2.58,0.43,4.63,49,29,52,74,0.978,ARG,Argentina,Americas
+2.28,-0.14,4.49,50,41,55,85,0.932,IDN,Indonesia,East Asia & Pacific
+2.23,-0.22,3.88,51,30,53,75,0.937,CZE,Czech Republic,Europe & Central Asia
+2.2,0.35,3.73,52,34,54,72,0.968,TUN,Tunisia,Middle East & N. Africa
+2.19,-0.67,5.77,53,32,57,88,0.866,URY,Uruguay,Americas
+2.0,0.24,3.96,54,32,57,74,0.975,HUN,Hungary,Europe & Central Asia
+2.0,-1.1,4.41,55,28,55,91,0.856,UGA,Uganda,Sub-Saharan Africa
+1.86,0.97,2.55,56,52,57,66,1.0,DNK,Denmark,Europe & Central Asia
+1.83,-1.57,5.07,57,33,58,97,0.803,ZMB,Zambia,Sub-Saharan Africa
+1.46,-3.8,5.19,58,26,59,110,0.716,TKM,Turkmenistan,Europe & Central Asia
+1.33,-1.44,4.11,59,35,65,96,0.754,BOL,Bolivia,Americas
+0.92,-3.45,4.21,60,37,64,110,0.678,ESP,Spain,Europe & Central Asia
+0.83,-5.04,5.61,61,21,67,118,0.612,GEO,Georgia,Europe & Central Asia
+0.75,-6.89,9.07,62,9,72,124,0.53,AFG,Afghanistan,South Asia
+0.73,-1.12,2.34,63,56,68,93,0.743,FRA,France,Europe & Central Asia
+0.69,-4.19,4.11,64,39,66,114,0.64,ALB,Albania,Europe & Central Asia
+0.67,-2.09,3.16,65,50,69,100,0.65,CRI,Costa Rica,Americas
+0.65,-2.71,3.48,66,48,68,104,0.658,USA,USA,Americas
+0.65,-3.55,4.58,67,40,70,112,0.593,COL,Colombia,Americas
+0.41,-2.07,3.79,68,37,76,98,0.515,BGR,Bulgaria,Europe & Central Asia
+0.38,-4.05,3.53,69,38,70,112,0.6,GRC,Greece,Europe & Central Asia
+0.34,-4.15,3.29,70,34,69,104,0.615,ISR,Israel,Middle East & N. Africa
+0.3,-4.33,4.6,71,26,73,108,0.552,SDN,Sudan,Sub-Saharan Africa
+0.27,-0.81,1.21,72,65,73,82,0.636,BEL,Belgium,Europe & Central Asia
+0.26,-1.88,2.05,73,50,73,88,0.588,SRB,Serbia,Europe & Central Asia
+0.25,-3.37,3.71,74,41,75,109,0.52,LAO,Lao,East Asia & Pacific
+0.22,-1.6,1.15,75,60,74,86,0.654,HRV,Croatia,Europe & Central Asia
+0.13,-1.14,0.92,76,64,76,88,0.568,SVK,Slovak Republic,Europe & Central Asia
+-0.13,-0.73,0.47,77,70,78,90,0.324,CHE,Switzerland,Europe & Central Asia
+-0.23,-6.93,6.73,78,16,83,122,0.446,NPL,Nepal,South Asia
+-0.24,-2.58,1.87,79,55,81,99,0.384,PER,Peru,Americas
+-0.28,-1.39,0.6,80,69,79,92,0.308,AUT,Austria,Europe & Central Asia
+-0.28,-1.61,0.58,81,73,80,86,0.296,CYP,Cyprus,Europe & Central Asia
+-0.37,-3.35,2.57,82,43,83,99,0.38,BIH,Bosnia and Herzegovina,Europe & Central Asia
+-0.47,-4.79,3.32,83,38,85,109,0.414,TGO,Togo,Sub-Saharan Africa
+-0.53,-1.6,0.22,84,76,83,91,0.128,NLD,Netherlands,Europe & Central Asia
+-0.54,-4.11,3.02,85,51,83,116,0.385,TZA,Tanzania,Sub-Saharan Africa
+-0.57,-3.8,1.6,86,56,84,102,0.393,POL,Poland,Europe & Central Asia
+-0.61,-4.2,2.57,87,55,84,116,0.385,KEN,Kenya,Sub-Saharan Africa
+-0.61,-6.23,4.17,88,29,84,116,0.424,GMB,Gambia,Sub-Saharan Africa
+-0.65,-3.75,1.71,89,56,84,101,0.37,CHL,Chile,Americas
+-0.8,-5.0,1.98,90,52,85,109,0.376,BGD,Bangladesh,South Asia
+-1.18,-7.32,4.46,91,40,92,130,0.36,HTI,Haiti,Americas
+-1.25,-5.98,3.01,92,48,92,122,0.316,GTM,Guatemala,Americas
+-1.28,-4.93,1.61,93,58,92,109,0.26,IRN,Iran,Middle East & N. Africa
+-1.38,-5.49,1.18,94,61,91,112,0.263,THA,Thailand,East Asia & Pacific
+-1.43,-3.74,0.71,95,66,92,110,0.14,MYS,Malaysia,East Asia & Pacific
+-1.62,-10.79,6.6,96,24,93,137,0.396,PNG,Papua New Guinea,East Asia & Pacific
+-1.89,-5.29,1.6,97,54,98,113,0.16,MKD,North Macedonia,Europe & Central Asia
+-1.92,-3.26,-0.48,98,79,98,108,0.015,ROU,Romania,Europe & Central Asia
+-1.98,-4.72,1.09,99,64,98,111,0.122,ITA,Italy,Europe & Central Asia
+-2.08,-2.84,-1.71,100,91,99,107,0.0,DZA,Algeria,Middle East & N. Africa
+-2.19,-5.26,1.27,101,63,99,117,0.118,CMR,Cameroon,Sub-Saharan Africa
+-2.47,-5.19,-0.23,102,80,101,117,0.032,MNG,Mongolia,East Asia & Pacific
+-2.5,-6.82,1.26,103,64,102,122,0.151,ARM,Armenia,Europe & Central Asia
+-2.5,-5.03,-0.56,104,86,101,111,0.01,KAZ,Kazakhstan,Europe & Central Asia
+-2.55,-5.91,0.89,105,67,103,124,0.11,ETH,Ethiopia,Sub-Saharan Africa
+-2.56,-7.7,1.37,106,57,102,122,0.164,CHN,China,East Asia & Pacific
+-2.62,-9.07,4.06,107,43,104,134,0.244,ZWE,Zimbabwe,Sub-Saharan Africa
+-2.64,-7.91,2.97,108,44,103,125,0.201,PAK,Pakistan,South Asia
+-3.15,-6.86,0.69,109,71,107,126,0.081,LBY,Libya,Middle East & N. Africa
+-3.23,-10.26,1.55,110,55,104,130,0.186,KOR,South Korea,East Asia & Pacific
+-3.81,-10.41,1.71,111,53,109,131,0.148,SEN,Senegal,Sub-Saharan Africa
+-3.86,-6.94,-1.04,112,88,111,121,0.013,GNB,Guinea-Bissau,Sub-Saharan Africa
+-4.12,-6.02,-2.37,113,97,111,124,0.0,AZE,Azerbaijan,Europe & Central Asia
+-4.53,-9.51,-0.3,114,87,115,129,0.038,IND,India,South Asia
+-4.96,-9.16,-1.32,115,92,116,127,0.012,TTO,Trinidad and Tobago,Americas
+-5.14,-7.96,-2.95,116,97,117,129,0.0,DOM,Dominican Republic,Americas
+-5.26,-12.97,0.22,117,74,115,136,0.06,EGY,Egypt,Middle East & N. Africa
+-5.3,-6.28,-4.27,118,107,117,126,0.0,IRL,Ireland,Europe & Central Asia
+-5.36,-7.83,-3.2,119,109,118,129,0.0,TUR,Turkey,Europe & Central Asia
+-5.4,-9.17,-0.93,120,80,120,137,0.024,PAN,Panama,Americas
+-5.95,-11.6,-0.47,121,82,122,140,0.037,ZAF,South Africa,Sub-Saharan Africa
+-6.09,-11.59,-0.72,122,87,121,137,0.028,MLI,Mali,Sub-Saharan Africa
+-6.18,-9.89,-2.46,123,105,123,132,0.003,IRQ,Iraq,Middle East & N. Africa
+-6.38,-11.02,-2.62,124,104,122,131,0.002,GHA,Ghana,Sub-Saharan Africa
+-7.64,-16.32,-0.83,125,89,126,141,0.032,OMN,Oman,Middle East & N. Africa
+-7.8,-12.68,-3.89,126,113,127,137,0.0,SGP,Singapore,East Asia & Pacific
+-7.83,-18.63,-0.78,127,89,124,143,0.026,ARE,UAE,Middle East & N. Africa
+-7.84,-10.37,-4.95,128,116,128,131,0.0,BEN,Benin,Sub-Saharan Africa
+-8.13,-17.37,-2.42,129,94,127,146,0.002,CAF,Central African Republic,Sub-Saharan Africa
+-8.28,-10.14,-6.61,130,120,129,134,0.0,SLE,Sierra Leone,Sub-Saharan Africa
+-8.42,-15.15,-1.99,131,88,130,144,0.014,SWZ,Eswatini,Sub-Saharan Africa
+-9.65,-10.75,-8.46,132,127,133,137,0.0,GIN,Guinea,Sub-Saharan Africa
+-10.05,-16.05,-4.11,133,102,135,144,0.002,NAM,Namibia,Sub-Saharan Africa
+-10.06,-16.5,-4.11,134,115,135,142,0.002,NER,Niger,Sub-Saharan Africa
+-10.08,-13.46,-6.7,135,125,134,140,0.0,BFA,Burkina Faso,Sub-Saharan Africa
+-10.57,-13.44,-7.26,136,130,136,140,0.0,CIV,Cote d'Ivoire,Sub-Saharan Africa
+-10.74,-24.37,-1.1,137,93,134,146,0.03,BHR,Bahrain,Middle East & N. Africa
+-11.69,-15.37,-7.85,138,128,138,145,0.0,TCD,Chad,Sub-Saharan Africa
+-11.72,-21.07,-4.02,139,106,138,148,0.002,COG,"Congo, Rep.",Sub-Saharan Africa
+-12.21,-24.35,-2.6,140,106,139,146,0.012,KWT,Kuwait,Middle East & N. Africa
+-12.36,-17.96,-7.0,141,119,140,147,0.0,BWA,Botswana,Sub-Saharan Africa
+-13.06,-18.28,-9.0,142,133,141,145,0.0,MRT,Mauritania,Sub-Saharan Africa
+-13.81,-19.82,-8.43,143,124,143,148,0.0,AGO,Angola,Sub-Saharan Africa
+-14.25,-26.56,-6.04,144,125,142,147,0.0,SAU,Saudi Arabia,Middle East & N. Africa
+-14.76,-18.08,-11.88,145,135,144,147,0.0,GAB,Gabon,Sub-Saharan Africa
+-14.83,-20.02,-9.55,146,136,143,147,0.0,NGA,Nigeria,Sub-Saharan Africa
+-14.94,-20.9,-8.62,147,133,143,148,0.0,GNQ,Equatorial Guinea,Sub-Saharan Africa
+-20.66,-38.22,-7.68,148,130,148,148,0.0,QAT,Qatar,Middle East & N. Africa
