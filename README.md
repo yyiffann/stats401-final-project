@@ -2,7 +2,7 @@
 
 STATS 401 final project, Luyu Su and Yifan Zuo.
 
-- Interim Check-in: [`interim.html`](interim.html)
+- Project page (GitHub Pages): `index.html`(index.html)
 - Proposal: [`proposal.md`](proposal.md)
 
 ## Repository layout
@@ -39,3 +39,8 @@ The page loads CSV/JSON with `fetch`, so it must be served, not opened as a file
 python -m http.server 8000
 # open http://localhost:8000
 ```
+
+## Publish with GitHub Pages
+
+Settings → Pages → Source: *Deploy from a branch* → Branch `main`, folder `/ (root)`.
+The page will be at `https://yyiffann.github.io/stats401-final-project/`.
