@@ -60,4 +60,4 @@ Income is a strong but imperfect guide to well-being: in 2022 the gap runs from 
 
 ## Roles and responsibilities
 
-[Adjust to what actually happened.] **Yifan Zuo**: data acquisition, cleaning and integration; well-being score, gap and sensitivity analysis; selected D3 views; interaction design and testing. **Luyu Su**: data preparation and exploratory analysis; selected D3 views; interactive features and website interface; documentation. **Both**: research questions, validation, narrative, user testing, report, poster and presentation.
+**Yifan Zuo**: data acquisition, cleaning and integration; well-being score, gap and sensitivity analysis; selected D3 views; interaction design and testing. **Luyu Su**: data preparation and exploratory analysis; selected D3 views; interactive features and website interface; documentation. **Both**: research questions, validation, narrative, user testing, report, poster and presentation.
