@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Poster: Economic Growth and Human Well-being</title>
+<style>
+
+* { box-sizing: border-box; }
+body { margin: 0; width: 1800px; font-family: "Public Sans","Helvetica Neue",Arial,sans-serif; color: #1c2530; background: #f5f7f9; padding: 28px 48px; overflow: hidden; }
+h1 { font-size: 60px; margin: 0 0 6px; letter-spacing: -0.02em; }
+.sub { font-size: 24px; color: #5b6673; margin: 0 0 20px; }
+.grid { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 22px; }
+.box { background: #fff; border: 1px solid #d9dde3; border-radius: 8px; padding: 16px 20px; }
+h2 { font-size: 24px; margin: 0 0 8px; color: #1f4e79; text-transform: uppercase; letter-spacing: .05em; }
+p, li { font-size: 16px; line-height: 1.35; margin: 0 0 8px; }
+ul { padding-left: 20px; margin: 0; }
+img { width: 100%; display: block; border: 1px solid #d9dde3; border-radius: 4px; margin-bottom: 8px; }
+.big { font-size: 30px; font-weight: 800; color: #8a1f4b; line-height: 1; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stats p { font-size: 14px; margin: 0; }
+.cap { font-size: 15px; color: #5b6673; margin-top: -2px; }
+.col { display: flex; flex-direction: column; gap: 22px; }
+</style></head><body>
+<h1>Economic growth and human well-being</h1>
+<p class="sub">Does a country's income tell us how well its people live? 148 countries, 2000–2022. Luyu Su &amp; Yifan Zuo · STATS 401 · yyiffann.github.io/stats401-final-project</p>
+<div class="grid">
+<div class="col">
+ <div class="box"><h2>Why and questions</h2>
+  <p>GDP per person is the default yardstick of progress, but says little about health, schooling, services, work and clean air.</p>
+  <p style='font-size:16px'><b>Key measure:</b> the <b>well-being gap</b> = well-being score minus the score expected at that income.</p>
+  <ul><li>Where is prosperity, and where does well-being beat it?</li><li>How did countries' paths differ?</li><li>Who departs from the income pattern?</li><li>Which dimensions explain it?</li><li>Who moved to a higher stage?</li></ul></div>
+ <div class="box"><h2>Data and method</h2>
+  <ul><li>World Bank WDI + UNDP HDR + World Happiness Report + Natural Earth</li><li>148 countries × 23 years = 3,404 rows; 10 indicators → 5 dimensions → 1 score (fixed goalposts)</li><li>Yearly LOWESS of score on log GDP gives the gap</li><li>2,000 random weightings test robustness</li><li>k-means (k=5) development profiles at 4 snapshot years</li><li>Validation: score vs. life satisfaction r = 0.78</li><li>D3.js v7, one shared state links all views</li></ul></div>
+ <div class="box"><h2>Key findings</h2>
+  <div class="stats"><div><span class="big">+16 → −21</span><p>gap range 2022, Kyrgyz Republic to Qatar</p></div><div><span class="big">36 → 42</span><p>expected score at $2,000, 2000 → 2022</p></div><div><span class="big">33 / 42</span><p>“catching up” countries reached upper-middle</p></div><div><span class="big">35% → 13%</span><p>people in the lowest profile, 2000 → 2022</p></div></div></div>
+</div>
+<div class="col">
+ <div class="box"><h2>1 · Where (map) &amp; 2 · How (paths)</h2>
+  <img src="../images/final/chart_fig1.png" alt="Figure 1"><img src="../images/final/chart_fig2.png" alt="Figure 2">
+  <p class="cap">Year slider animates both; brush on the plot selects groups; selection is shared across all views.</p></div>
+</div>
+<div class="col">
+ <div class="box"><h2>3 · Who (weights) &amp; 4 · Why (heatmap)</h2>
+  <img src="../images/final/chart_fig3.png" alt="Figure 3" style="height:400px;object-fit:cover;object-position:top">
+  <img src="../images/final/chart_fig4.png" alt="Figure 4" style="height:330px;object-fit:cover;object-position:top"></div>
+ <div class="box"><h2>5 · Who moved (alluvial)</h2>
+  <img src="../images/final/chart_fig5.png" alt="Figure 5">
+  <p>Gulf states lose on clean air and education; African resource exporters on health, living conditions and work.</p></div>
+</div>
+</div></body></html>

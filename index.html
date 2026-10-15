@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Economic Growth and Human Well-being | STATS 401 Interim Check-in</title>
-  <meta name="description" content="Interim check-in for a STATS 401 final project comparing 148 countries' well-being with what their income predicts, 2000–2022.">
+  <title>Economic Growth and Human Well-being | STATS 401 Final Project</title>
+  <meta name="description" content="An interactive visual story of 148 countries from 2000 to 2022: how far well-being sits above or below what countries of similar income achieve, and why.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=Public+Sans:wght@400;500;650;700;750;800&display=swap" rel="stylesheet">
@@ -16,51 +16,181 @@
   <div class="wrap">
     <h1>Economic growth and human well-being</h1>
     <p class="dek">Richer countries usually live better, but not always by as much as their income would suggest. We measure, for 148 countries from 2000 to 2022, how far well-being sits above or below what countries of similar income achieve, and ask what explains the difference.</p>
-    <p class="byline">Luyu Su and Yifan Zuo, STATS 401 final project, interim check-in. See the <a href="proposal.md">original proposal</a> and the <a href="https://github.com/yyiffann/stats401-final-project">repository</a>.</p>
+    <p class="byline">Luyu Su and Yifan Zuo, STATS 401 final project. <a href="#about">Report, poster and code</a> &middot; <a href="https://github.com/yyiffann/stats401-final-project">GitHub repository</a> &middot; <a href="interim/">interim check-in page</a></p>
   </div>
 </header>
 
 <nav class="toc" aria-label="Sections">
   <div class="wrap">
     <ol>
-      <li><a href="#changes"><span>0</span>Changes since the proposal</a></li>
-      <li><a href="#data"><span>1</span>Dataset</a></li>
-      <li><a href="#viz"><span>2</span>Visualizations</a></li>
-      <li><a href="#interaction"><span>3</span>Interaction and animation plan</a></li>
-      <li><a href="#evaluation"><span>4</span>Evaluation plan</a></li>
+      <li><a href="#questions"><span>0</span>Questions</a></li>
+      <li><a href="#fig-1"><span>1</span>Where</a></li>
+      <li><a href="#fig-2"><span>2</span>How</a></li>
+      <li><a href="#fig-3"><span>3</span>Who</a></li>
+      <li><a href="#fig-4"><span>4</span>Why</a></li>
+      <li><a href="#fig-5"><span>5</span>Who moved</a></li>
+      <li><a href="#takeaways"><span>→</span>Takeaways</a></li>
+      <li><a href="#data"><span>6</span>Data and method</a></li>
+      <li><a href="#about"><span>7</span>Team and deliverables</a></li>
     </ol>
   </div>
 </nav>
 
+<div class="controlbar" id="controlbar" role="region" aria-label="Shared controls">
+  <div class="wrap">
+    <div class="cb-year">
+      <button class="play" id="cb-play" aria-label="Play year animation">▶</button>
+      <input type="range" id="cb-year" min="2000" max="2022" step="1" value="2022" aria-label="Year">
+      <output id="cb-year-out" for="cb-year" title="The year drives Figures 1 and 2 and the marker in Figure 5">2022</output>
+    </div>
+        <div class="cb-sel" id="cb-sel">
+      <span class="cb-label">Selected:</span><span id="cb-chips"></span>
+      <input type="search" id="cb-search" list="cb-countries" placeholder="Add a country…" aria-label="Add a country to the selection">
+      <datalist id="cb-countries"></datalist>
+      <button class="btn" id="cb-clear">Clear</button>
+    </div>
+  </div>
+</div>
+
 <main>
 
 <!-- ============================================================ 0 -->
-<section id="changes">
+<section id="questions">
   <div class="wrap">
     <div class="prose">
-      <h2><span class="num">0</span>Changes since the proposal</h2>
-      <p>While building the dataset we found that two proposed views (the quadrant scatterplot and the clustered bubble map) answered the same question with the same axes, and that the radar chart with adjustable weights had no clear task behind it. We reorganised the project around one derived measure, the <strong>well-being gap</strong>: a country's well-being score minus the score expected for its income in that year. Every view now answers a different question about that gap.</p>
+      <h2><span class="num">0</span>Why this matters, and what we ask</h2>
     </div>
-    <div class="table-scroll">
-      <table>
-        <thead><tr><th>Proposal</th><th>Now</th><th>Why</th></tr></thead>
-        <tbody>
-          <tr><td>Choropleth of GDP per capita</td><td>Paired choropleths: GDP per capita and well-being gap</td><td>Showing prosperity next to the gap makes "rich is not the same as ahead" visible in one glance.</td></tr>
-          <tr class="changed"><td>Trajectory view + quadrant scatterplot</td><td>One connected scatterplot with an "expected at this income" reference curve</td><td>The two proposed views shared axes. A fitted curve replaces arbitrary median quadrants and lets trails show movement relative to it.</td></tr>
-          <tr class="changed"><td>Radar chart with weight sliders</td><td>Ranked gap chart with weight-sensitivity intervals</td><td>Weights now have a purpose: they test whether a country's rank survives different definitions of well-being.</td></tr>
-          <tr class="changed"><td>(new)</td><td>Clustered heatmap of dimension-level gaps</td><td>Answers research question 4 directly: which dimensions produce each country's gap.</td></tr>
-          <tr class="changed"><td>Cluster map with trajectories</td><td>A transition view of development profiles, linked to all other views (visual form still being designed)</td><td>Shows who moved between development stages and when; this will be the project's most complex, coordinated view.</td></tr>
-        </tbody>
-      </table>
+    <div class="lede-grid">
+      <div><h4>Why</h4><p>GDP per person is the default yardstick of national progress, yet income says little about whether people are healthy, schooled, safely supplied with water and power, in work and breathing clean air. Where well-being follows income, growth is a fair proxy for progress. Where it does not, we want to know who is ahead, who is behind and why.</p></div>
+      <div><h4>What</h4><p>A country-year panel of 148 countries, 2000–2022: GDP per capita and ten well-being indicators from the World Bank and UNDP, combined into five dimensions and one score. The key derived measure is the <strong>well-being gap</strong>: a country's score minus the score expected for its income that year.</p></div>
+      <div><h4>How</h4><p>Five coordinated views move from where, to how, to who, to why, to who moved. One shared state (year, selected countries, dimension weights) links them, so a question raised in one view can be followed up in the next.</p></div>
+    </div>
+    <div class="prose">
+      <h3>Research questions</h3>
+      <ol class="rq">
+        <li>How does economic prosperity vary across countries and over time? <a href="#fig-1">Figure 1</a></li>
+        <li>How have countries followed different paths of economic and human development? <a href="#fig-2">Figure 2</a></li>
+        <li>To what extent is higher GDP associated with higher well-being, and who departs from that pattern? <a href="#fig-2">Figures 2</a> and <a href="#fig-3">3</a></li>
+        <li>Which dimensions contribute to the differences between countries? <a href="#fig-4">Figure 4</a></li>
+        <li>Which countries moved to a higher stage of development, and how many people does that involve? <a href="#fig-5">Figure 5</a></li>
+      </ol>
+      <p><strong>How to read this page.</strong> The bar at the top of the page is shared by all views: move the year, add or remove countries. Hovering a country in any view lights it up in all the others; clicking selects it (orange outline). Each figure has its own controls just above it.</p>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ 1 -->
+<!-- ============================================================ 1-5 -->
+<section id="viz">
+  <div class="wrap">
+
+    <figure class="viz" id="fig-1">
+      <div class="fig-head">
+        <p class="step-tag">1 · Context</p>
+        <h3>Where is prosperity, and where does well-being beat it?</h3>
+        <p class="fig-q">Research question 1. GDP per capita (left) next to a second measure (right), for the year on the slider.</p>
+      </div>
+      <div class="fig-controls" id="fig1-controls">
+        <label>Right map shows <select id="fig1-metric"></select></label>
+        <label>Zoom to <select id="fig1-region"></select></label>
+        <button id="fig1-reset">Reset zoom</button>
+        <span class="hint">Scroll or drag to zoom and pan (both maps move together). Click a country to select it.</span>
+      </div>
+      <div class="two-maps">
+        <div><p class="map-title">GDP per capita</p><div class="chart" id="fig1-gdp"></div></div>
+        <div><p class="map-title">Well-being gap</p><div class="chart" id="fig1-gap"></div></div>
+      </div>
+      <figcaption>In 2022 the richest band (North America, Western Europe, the Gulf) does not match the band that beats its income. The Gulf states and several oil producers in Central Africa are among the darkest on the left map and the most negative on the right, while much of the former Soviet Union and parts of East Africa do better than their income predicts. Press play to watch the same two maps from 2000.
+        <span class="idiom">Idiom: paired choropleth maps (sequential log scale; diverging scale centred on zero), linked zoom, animated fills.</span></figcaption>
+    </figure>
+
+    <figure class="viz" id="fig-2">
+      <div class="fig-head">
+        <p class="step-tag">2 · Overview</p>
+        <h3>Paths of progress relative to what income predicts</h3>
+        <p class="fig-q">Research questions 2 and 3. Well-being against GDP per capita; the black curve is the score expected at that income.</p>
+      </div>
+      <div class="fig-controls">
+        <label>Vertical axis <select id="fig2-ymode"><option value="score">Well-being score</option><option value="gap">Gap from the expected curve</option></select></label>
+        <span class="hint">Press play in the bar above to move every country through time. Drag a box on the plot to select a group (hold Shift to add); click a bubble to add or remove one.</span>
+      </div>
+      <div class="chart" id="fig2"></div>
+      <figcaption>The whole curve moves up between 2000 and 2022: at $2,000 per person the expected score rose from 36 to 42, at $10,000 from 60 to 63, so the same income buys more well-being today. In the default view, China starts 9 points above the curve in 2000 and ends 3 below it, because income grew faster than measured well-being. India sits about 4 points below in both years, Sri Lanka stays 8 to 10 above, and Nigeria and Qatar stay 15 to 21 below whatever their income does.
+        <span class="idiom">Idiom: animated connected scatterplot with a fitted reference curve (log x-axis, bubble area = population), brushing and linking.</span></figcaption>
+    </figure>
+
+    <figure class="viz" id="fig-3">
+      <div class="fig-head">
+        <p class="step-tag">3 · Important pattern</p>
+        <h3>Who beats their income, and does it depend on how we weight well-being?</h3>
+        <p class="fig-q">Research question 3. Largest gaps in 2022, with the range across 2,000 random weightings of the five dimensions.</p>
+      </div>
+      <div class="fig-controls">
+        <div class="weights" id="fig3-weights" role="group" aria-label="Dimension weights"></div>
+        <button id="fig3-reset">Equal weights</button>
+        <label><input type="checkbox" id="fig3-rerank"> Re-rank countries by my weights</label>
+        <label>Show <select id="fig3-region"></select></label>
+        <span class="hint">The grey bars do not move: they show how much each country's gap varies across plausible weightings. The filled dot is your weighting.</span>
+      </div>
+      <div class="chart" id="fig3"></div>
+      <figcaption>Kyrgyz Republic, Malawi and Burundi stay near the top under almost any weighting; Palestine and Madagascar do not (their rank can fall to 54 and 40). At the bottom, resource exporters dominate. Qatar is last with equal weights, but its interval is the widest (30 points), because its deficit is concentrated in one dimension.
+        <span class="idiom">Idiom: ranked dot plot with interval bars; sliders recompute the gap (and the expected curve) live.</span></figcaption>
+    </figure>
+
+    <figure class="viz" id="fig-4">
+      <div class="fig-head">
+        <p class="step-tag">4 · Deeper exploration</p>
+        <h3>Which dimensions create the gap?</h3>
+        <p class="fig-q">Research question 4. Each dimension's score minus the score expected at that income, 2022.</p>
+      </div>
+      <div class="fig-controls">
+        <label>Rows <select id="fig4-mode"><option value="cluster">Top and bottom 20, clustered</option><option value="selected">My selection</option></select></label>
+        <button id="fig4-resetsort">Reset order</button>
+        <span class="hint">Click a column header to sort (again for ascending, a third time to reset). In the clustered view, click a dot on the tree to select that whole group everywhere.</span>
+      </div>
+      <div class="chart" id="fig4"></div>
+      <figcaption>The clustering separates distinct stories. Gulf states fall short almost entirely on clean air and education. Oil and mineral exporters in Sub-Saharan Africa (Nigeria, Angola, Gabon, Equatorial Guinea, Botswana) fall short on health, living conditions and, for several of them, work. Central Asian overperformers gain mainly on education and basic services, while Finland, Estonia and New Zealand gain mainly on clean air.
+        <span class="idiom">Idiom: clustered heatmap with dendrogram, sortable columns, animated row reordering.</span></figcaption>
+    </figure>
+
+    <figure class="viz" id="fig-5">
+      <div class="fig-head">
+        <p class="step-tag">5 · Insight</p>
+        <h3>Which countries moved to a higher stage of development?</h3>
+        <p class="fig-q">Research question 5. Every country belongs to one of five development profiles at four snapshot years; ribbons are countries moving between them.</p>
+      </div>
+      <div class="fig-controls">
+        <label>Size ribbons by <select id="fig5-weight"><option value="count">number of countries</option><option value="pop">population</option></select></label>
+        <span id="fig5-note"></span>
+        <span class="hint">Click a ribbon or a block to select those countries in all views. The dashed line follows the year slider.</span>
+      </div>
+      <div class="chart" id="fig5"></div>
+      <figcaption>Between 2000 and 2022, 33 of 42 “catching up” countries reached the upper-middle profile and 23 of 32 upper-middle countries reached the high profile; only Greece moved down and back. Progress at the bottom was slower: 19 of 49 low-income countries moved up. Counting people instead of countries changes the picture: the lowest profile held 35% of the population of our 148 countries in 2000 and 13% in 2022, mostly because large countries such as China and India moved on.
+        <span class="idiom">Idiom: alluvial diagram on a true time axis (uneven snapshots), selection overlay inside ribbons, count or population weighting. Profiles come from k-means on log GDP and the five dimensions, fitted jointly on the four snapshot years.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================================================ takeaways -->
+<section id="takeaways">
+  <div class="wrap">
+    <div class="prose">
+      <h2><span class="num">→</span>What we learn</h2>
+      <ol class="takeaways">
+        <li><strong>Income is a strong but imperfect guide.</strong> At the same income, countries differ by dozens of points of well-being: in 2022 the gap runs from +16 (Kyrgyz Republic) to −21 (Qatar).</li>
+        <li><strong>The same income buys more well-being than it used to.</strong> The expected curve rose at every income level between 2000 and 2022, so a country can improve without outgrowing its peers.</li>
+        <li><strong>Falling short has different causes.</strong> Gulf states lose on clean air and education; Sub-Saharan resource exporters lose on health, living conditions and work. A single “resource curse” label hides this.</li>
+        <li><strong>Overperformance is mostly about basic services and schooling,</strong> and the top of the ranking is robust to how well-being is weighted, while some middle positions are not.</li>
+        <li><strong>Development stages are moving, unevenly.</strong> Most “catching up” countries have reached the upper-middle profile since 2000, while fewer than half of the lowest-profile countries have moved up, and counting people instead of countries shows how much China and India shape the global picture.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 6 -->
 <section id="data">
   <div class="wrap">
     <div class="prose">
-      <h2><span class="num">1</span>Dataset</h2>
+      <h2><span class="num">6</span>Data and method</h2>
       <p>All raw files are downloaded by <code>scripts/01_download_data.py</code> and the processed files are rebuilt by <code>scripts/02_build_dataset.py</code>, so every number on this page can be reproduced from the repository.</p>
 
       <h3>Raw data</h3>
@@ -97,6 +227,10 @@
         <li><strong>Cluster development profiles.</strong> K-means (k = 5) on log GDP plus the five dimensions, fitted jointly on 2000, 2008, 2015 and 2022 so each cluster means the same thing in every year.</li>
       </ol>
 
+      
+      <h3>Implementation</h3>
+      <p>The site is plain HTML, CSS and JavaScript with D3.js v7 and topojson-client (both vendored in <code>lib/</code>), so it runs on GitHub Pages with no build step. All five figures read one shared state object (<code>js/common.js</code>): the selected year, the selected countries, the dimension weights and each view's display options. Changing the state in any view redraws only the views that depend on it. Figure 3 recomputes the expected-well-being curve in the browser with a JavaScript port of the same LOWESS fit used in Python (<code>js/lowess.js</code>); for equal weights it reproduces the Python values to within 0.01 points.</p>
+
       <h3>Processed data</h3>
     </div>
     <div class="table-scroll">
@@ -112,116 +246,37 @@
       </table>
     </div>
     <div class="prose">
-      <p class="finding">A first sanity check: across 2,053 country-years the well-being score correlates with WHR life satisfaction at r = 0.78, and, more tellingly, the income-adjusted gap correlates with income-adjusted life satisfaction at r = 0.28. Countries that beat their income on our measure also tend to report higher life satisfaction than their income predicts.</p>
+      <p class="finding">Validation: across 2,053 country-years the well-being score correlates with WHR life satisfaction at r = 0.78, and, more tellingly, the income-adjusted gap correlates with income-adjusted life satisfaction at r = 0.28. Countries that beat their income on our measure also tend to report higher life satisfaction than their income predicts.</p>
       <p><strong>Known limitations.</strong> PM2.5 exposure includes natural desert dust, which penalises Gulf and Sahel countries heavily (visible in Figure 4). A collapse in GDP, as in Syria, can produce a positive gap because services built earlier outlast income. Education data for 2022 are partly UNDP projections.</p>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ 2 -->
-<section id="viz">
+<!-- ============================================================ 7 -->
+<section id="about">
   <div class="wrap">
     <div class="prose">
-      <h2><span class="num">2</span>Visualizations</h2>
-      <p>Figures 1–4 below are implemented in D3.js with the processed data; the data for Figure 5 are ready but its design is still open. They are shown as static figures for this check-in; hover tooltips are the only interaction so far. The views follow the research questions from the proposal, moving from where to how to why.</p>
-    </div>
-
-    <figure class="viz" id="fig-1">
-      <div class="fig-head">
-        <p class="fig-kicker">Figure 1, research question 1</p>
-        <h3>Where is prosperity, and where does well-being beat it?</h3>
-        <p class="fig-q">GDP per capita and the well-being gap, 2022</p>
-      </div>
-      <div class="two-maps">
-        <div><p class="map-title">GDP per capita</p><div class="chart" id="fig1-gdp"></div></div>
-        <div><p class="map-title">Well-being gap</p><div class="chart" id="fig1-gap"></div></div>
-      </div>
-      <figcaption>The richest band (North America, Western Europe, the Gulf) does not match the band that beats its income. The Gulf states and several oil producers in Central Africa are among the darkest on the left map and the most negative on the right, while much of the former Soviet Union and parts of East Africa do better than their income predicts.
-        <span class="idiom">Idiom: paired choropleth maps (sequential log scale; diverging scale centred on zero).</span></figcaption>
-    </figure>
-
-    <figure class="viz" id="fig-2">
-      <div class="fig-head">
-        <p class="fig-kicker">Figure 2, research questions 2 and 3</p>
-        <h3>Paths of progress relative to what income predicts</h3>
-        <p class="fig-q">Well-being score against GDP per capita, 2022, with six country paths from 2000</p>
-      </div>
-      <div class="chart" id="fig2"></div>
-      <figcaption>The whole curve moved up between 2000 and 2022: at $2,000 per person the expected score rose from 36 to 42, at $10,000 from 60 to 63. The same income buys more well-being today. China started 9 points above the curve in 2000 and ended 3 points below it: its income grew faster than measured well-being. India stayed about 4–6 points below throughout, Sri Lanka stayed about 8 points above, and Nigeria and Qatar stayed 15–24 points below whatever their income did.
-        <span class="idiom">Idiom: connected scatterplot with a fitted reference curve (log x-axis, bubble size = population).</span></figcaption>
-    </figure>
-
-    <figure class="viz" id="fig-3">
-      <div class="fig-head">
-        <p class="fig-kicker">Figure 3, research question 3</p>
-        <h3>Who beats their income, and does it depend on how we weight well-being?</h3>
-        <p class="fig-q">Largest positive and negative gaps in 2022, with the range across 2,000 random weightings</p>
-      </div>
-      <div class="chart" id="fig3"></div>
-      <figcaption>Kyrgyz Republic, Malawi and Burundi stay near the top under almost any weighting; Palestine and Madagascar do not (their rank can fall to 54 and 40). At the bottom, resource exporters dominate. Qatar is last with equal weights, but its interval is the widest, because its deficit is concentrated in one dimension.
-        <span class="idiom">Idiom: ranked dot plot with interval bars.</span></figcaption>
-    </figure>
-
-    <figure class="viz" id="fig-4">
-      <div class="fig-head">
-        <p class="fig-kicker">Figure 4, research question 4</p>
-        <h3>Which dimensions create the gap?</h3>
-        <p class="fig-q">Each dimension's score minus the score expected at that income, 2022; rows grouped by similarity</p>
-      </div>
-      <div class="chart" id="fig4"></div>
-      <figcaption>The clustering separates distinct stories. Gulf states fall short almost entirely on clean air and education. Oil and mineral exporters in Sub-Saharan Africa (Nigeria, Angola, Gabon, Equatorial Guinea, Botswana) fall short on health, living conditions and, for several of them, work. Central Asian overperformers gain mainly on education and basic services, while Finland, Estonia and New Zealand gain mainly on clean air.
-        <span class="idiom">Idiom: clustered heatmap with dendrogram.</span></figcaption>
-    </figure>
-
-    <figure class="viz" id="fig-5">
-      <div class="fig-head">
-        <p class="fig-kicker">Figure 5, research question 5</p>
-        <h3>Which countries moved to a higher stage of development?</h3>
-        <p class="fig-q">Design in progress</p>
-      </div>
-      <figcaption>The data for this view are ready: every country is assigned to one of five development profiles (k-means on log GDP per capita and the five well-being dimensions, fitted jointly on 2000, 2008, 2015 and 2022 so a profile means the same thing in every year). Between 2000 and 2022, 33 of 42 "catching up" countries reached the upper-middle profile and 23 of 32 upper-middle countries reached the high profile; only Greece moved down and back. We are still choosing the visual form for this transition view and will show it at the final presentation.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- ============================================================ 3 -->
-<section id="interaction">
-  <div class="wrap">
-    <div class="prose">
-      <h2><span class="num">3</span>Interaction and animation plan</h2>
-      <p>The final site will be a set of <strong>coordinated views</strong> around one shared state: the selected year, the selected countries, and the current dimension weights. Selecting a country or a flow in any view highlights it in all others, so a user can go from "Qatar is last" (Figure 3) to "because of air and education" (Figure 4) to "its development profile never changed" (Figure 5) without losing context.</p>
+      <h2><span class="num">7</span>Team and deliverables</h2>
+      <h3>Roles</h3>
     </div>
     <div class="table-scroll">
-      <table>
-        <thead><tr><th>View</th><th>Planned interaction or animation</th><th>Purpose</th></tr></thead>
+      <table class="team">
+        <thead><tr><th>Team member</th><th>Responsibilities</th></tr></thead>
         <tbody>
-          <tr><td>1. Paired maps</td><td>Year slider with play button (animated transition of fills); toggle the right map between gap, well-being score and any single dimension; hover for details; click to select a country; region zoom.</td><td>Trend identification across space; details on demand; entry point for selecting countries.</td></tr>
-          <tr><td>2. Paths of progress</td><td>Year slider shared with Figure 1, animating bubbles and the reference curve; search box and click to add or remove trails; brush a region of the plot to select many countries; toggle between absolute score and gap on the y-axis.</td><td>Compare trajectories; see how the "expected" curve itself shifts; find countries that cross the curve.</td></tr>
-          <tr><td>3. Gap ranking</td><td>Weight sliders for the five dimensions: the dots move to the user's weighting while the grey intervals stay fixed, so the user sees whether their own definition is typical or extreme; filter by region or income group; switch between the top/bottom 15 and all 148 countries (scrolling list).</td><td>Robustness checking; turns the weight sliders from the proposal into a question with an answer.</td></tr>
-          <tr><td>4. Dimension heatmap</td><td>Choose rows (top/bottom 20, a region, or countries selected elsewhere); reorder rows by cluster, GDP or overall gap with animated row transitions; click a column to sort by that dimension; click a dendrogram branch to select its whole group.</td><td>Multidimensional comparison; discover groups of countries whose gaps have the same cause.</td></tr>
-          <tr><td>5. Development transitions</td><td>Form to be finalised. Planned in any form: select a transition (for example "catching up → upper-middle, 2008–2015") to highlight those countries in Figures 1–4; weight by number of countries or by population; trace one country's path across the four snapshots.</td><td>Identify transitions and who made them; population weighting shows how China and India change the human, not just the country, picture.</td></tr>
-          <tr><td>Whole page</td><td>A short guided "story" mode that steps through four preset states (the curve shift, the Gulf, Sub-Saharan resource exporters, Central Asia), then hands control to the user.</td><td>Lower the entry barrier for a general audience before free exploration.</td></tr>
+          <tr><td><strong>Yifan Zuo</strong></td><td>Data acquisition, cleaning, integration and processing; quantitative analysis and construction of derived indicators such as the well-being score; design and implementation of selected visualizations in D3.js; interaction design, testing and refinement; documentation and presentation.</td></tr>
+          <tr><td><strong>Luyu Su</strong></td><td>Data cleaning and preparation of datasets for visualization; exploratory analysis and interpretation of patterns; design and implementation of selected visualizations in D3.js; interactive features and the website interface; testing, documentation and presentation.</td></tr>
+          <tr><td>Both</td><td>Research questions, validation of data and results, the visualization narrative, user testing and debugging, final report, poster and presentation.</td></tr>
         </tbody>
       </table>
     </div>
-  </div>
-</section>
-
-<!-- ============================================================ 4 -->
-<section id="evaluation">
-  <div class="wrap">
     <div class="prose">
-      <h2><span class="num">4</span>Evaluation plan</h2>
-
-      <h3>What we will evaluate</h3>
-      <p>Three things, following the levels of Munzner's nested model: whether the derived measures are valid (data abstraction), whether users can complete the intended tasks correctly and quickly (task and idiom), and whether the coordinated views are usable (interaction).</p>
-
-      <h3>How we will evaluate it</h3>
-      <p><strong>Task-based user study.</strong> Eight to ten participants (classmates and friends outside statistics) complete about eight tasks mapped to the research questions, for example "Which of these two countries is further above its income expectation?", "Name one dimension that explains Nigeria's gap", "Did more countries move up or down between 2008 and 2015?". Each participant works with the interactive site and thinks aloud; half do the first four tasks on static versions of the figures first, so we can compare static against interactive.</p>
-      <p><strong>Expert feedback.</strong> A short walkthrough with the instructor or TA and one person with a development-economics background, focused on whether the gap measure and profile labels are fair and not misleading.</p>
-
-      <h3>Data and feedback we will collect</h3>
-      <p>Task accuracy and completion time; a 1–5 confidence rating per task; the System Usability Scale after the session; notes of where participants hesitated or misread a chart; and a simple interaction log (which views and controls were used, in what order). We will use the results to fix the two or three largest problems before the final presentation.</p>
+      <h3>Deliverables in this repository</h3>
+      <ul>
+        <li><a href="report/report.md">Final report</a> and <a href="poster/poster.html">poster</a> (<a href="poster/poster.pdf">PDF</a>)</li>
+        <li>Source data: <a href="https://github.com/yyiffann/stats401-final-project/tree/main/data/raw"><code>data/raw/</code></a>; cleaned data: <a href="https://github.com/yyiffann/stats401-final-project/tree/main/data/processed"><code>data/processed/</code></a></li>
+        <li>Collection and cleaning code: <a href="https://github.com/yyiffann/stats401-final-project/tree/main/scripts"><code>scripts/</code></a>; visualization code: <a href="https://github.com/yyiffann/stats401-final-project/tree/main/js"><code>js/</code></a></li>
+        <li><a href="proposal.md">Original proposal</a> and <a href="interim/">interim check-in page</a></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -236,14 +291,20 @@
 
 <script src="lib/d3.min.js"></script>
 <script src="lib/topojson-client.min.js"></script>
+<script src="js/lowess.js"></script>
 <script src="js/common.js"></script>
 <script src="js/fig1_maps.js"></script>
 <script src="js/fig2_paths.js"></script>
 <script src="js/fig3_rank.js"></script>
 <script src="js/fig4_heatmap.js"></script>
+<script src="js/fig5_flow.js"></script>
+<script src="js/controls.js"></script>
 <script>
   WB.loadAll().then(data => {
-    drawFig1(data); drawFig2(data); drawFig3(data); drawFig4(data);
+    WB.installHoverLink();
+    initFig1(data); initFig2(data); initFig3(data); initFig4(data); initFig5(data);
+    initControls(data);
+    window.WBDATA = data;
   }).catch(err => {
     document.querySelectorAll(".chart").forEach(el => {
       el.innerHTML = '<p style="font-family:var(--sans);color:var(--below)">Data did not load. Open this page through a web server (GitHub Pages, or <code>python -m http.server</code> in the repository root), not as a local file.</p>';
