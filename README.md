@@ -11,7 +11,7 @@ STATS 401 final project, Luyu Su and Yifan Zuo. Final version: five linked inter
 index.html                 final interactive site (five linked D3.js views, guided tour)
 interim/                   archived interim check-in page
 report/report.md           final report (~1,500 words)
-poster/                    poster (HTML, PNG, PDF)
+poster/                    poster (PDF)
 images/final/              screenshots of the final figures
 css/style.css
 js/common.js               shared state, loading, tooltip, cross-view hover/selection
